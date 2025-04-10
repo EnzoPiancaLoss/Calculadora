@@ -28,7 +28,7 @@ function processar_input(input) {
         stringMatematica = construir_string(input,stringMatematica);
         console.log(stringMatematica);
     }
-
+    atualizarDisplay(stringMatematica);
     
 }
 
