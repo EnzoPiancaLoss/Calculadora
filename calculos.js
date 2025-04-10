@@ -19,7 +19,12 @@ function processar_input(input) {
         } else if (input == forbiden[2]) {
             stringMatematica = evalvular(stringMatematica);
         } else if (input == forbiden[3]) {
+            //Se for true, apaga 2, false apaga uma vez
+            if (stringMatematica.charAt(stringMatematica.length - 1) == " ") {
+                stringMatematica = stringMatematica.slice(0, -1); 
+            }
             stringMatematica = stringMatematica.slice(0, -1);
+
         } else if (input == forbiden[4]) {
             stringMatematica += "-";
         }
@@ -28,7 +33,7 @@ function processar_input(input) {
         stringMatematica = construir_string(input,stringMatematica);
         console.log(stringMatematica);
     }
-    atualizarDisplay(stringMatematica)
+    atualizarDisplay(stringMatematica);
     
 }
 
