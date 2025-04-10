@@ -13,19 +13,13 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.cs
         <!--CE limpa, C coloca 0-->
 
         <!--Texto-->
-        <section>
-            <div class="col-3 bg-primary">
-                <p> lol </p>
-            </div>
-            <h1></h1>
-        </section>
         <!--Botoes-->
         <section>
             <div class="container">
                 <div id="calculador">
                     <div class="row">
                         <div class="col-3 ">
-                            <p class="resultado"> lol</p>
+                            <p class="resultado" id="Display"></p>
 
                         </div>
                     </div>
@@ -34,19 +28,19 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.cs
 
                     <div class="row">
                         <div class="col-3 ">
-                            <button>Ce</button>
+                            <button onclick="processar_input('ce')">Ce</button>
                         </div>
                         
                         <div class="col-3 ">
-                            <button>C</button>
+                            <button onclick="processar_input('C')">C</button>
                             
                         </div>
                         <div class="col-3 ">
-                            <button>del</button>
+                            <button onclick="processar_input('d')">del</button>
                             
                         </div>
                         <div class="col-3 ">
-                            <button>/</button>
+                            <button onclick="processar_input('/')">/</button>
                             
                         </div>
                         
@@ -57,49 +51,49 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.cs
                         </div>
                         
                         <div class="col-3">
-                            <button>8</button>
+                            <button onclick="processar_input('8')">8</button>
                             
                         </div>
                         <div class="col-3">
-                            <button>9</button>
+                            <button onclick="processar_input('9')">9</button>
                             
                         </div>
                         <div class="col-3 ">
-                            <button>*</button>
+                            <button onclick="processar_input('*')">*</button>
                             
                         </div>
                         
                     </div>
                     <div class="row">
                         <div class="col-3 ">
-                            <button>4</button>
+                            <button onclick="processar_input('4')">4</button>
                         </div>
                         
                         <div class="col-3 ">
-                            <button>5</button>
+                            <button onclick="processar_input('5')">5</button>
                             
                         </div>
                         <div class="col-3 ">
-                            <button>6</button>
+                            <button onclick="processar_input('6')">6</button>
                             
                         </div>
                         <div class="col-3 ">
-                            <button>-</button>
+                            <button onclick="processar_input('-')">-</button>
                             
                         </div>
                         
                     </div>
                     <div class="row">
                         <div class="col-3 ">
-                            <button>1</button>
+                            <button onclick="processar_input('1')">1</button>
                         </div>
                         
                         <div class="col-3">
-                            <button>2</button>
+                            <button onclick="processar_input('2')">2</button>
                             
                         </div>
                         <div class="col-3">
-                            <button>3</button>
+                            <button onclick="processar_input('3')">3</button>
                             
                         </div>
                         <div class="col-3 ">
@@ -110,15 +104,15 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.cs
                     </div>
                     <div class="row">
                         <div class="col-3">
-                            <button>+-</button>
+                            <button onclick="processar_input('+-')">+-</button>
                         </div>
                         
                         <div class="col-3">
-                            <button>0</button>
+                            <button onclick="processar_input('0')">0</button>
                             
                         </div>
                         <div class="col-3">
-                            <button>,</button>
+                            <button onclick="processar_input(',')">,</button>
                             
                         </div>
                         <div class="col-3 ">
