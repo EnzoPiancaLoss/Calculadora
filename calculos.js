@@ -1,4 +1,6 @@
-
+function atualizarDisplay(NovoDisplay) {
+    document.getElementById("Display").innerHTML = stringMatematica;
+}
 
 function processar_input(input) {
     let forbiden = ["ce", "C","=", "d","_"];
