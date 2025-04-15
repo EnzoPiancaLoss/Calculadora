@@ -3,7 +3,7 @@ function atualizarDisplay(NovoDisplay) {
 }
 
 function processar_input(input) {
-    let forbiden = ["ce", "C", "=", "d", "_", "decbin", "bindec", "dechex"];
+    let forbiden = ["ce", "C", "=", "d", "_", "decbin", "bindec", "dechex", "parA", "parB", "%"];
     let bool = false;
 
     for (let i = 0; i < forbiden.length; i++) {
@@ -22,6 +22,7 @@ function processar_input(input) {
             stringMatematica = "";
         } else if (input == forbiden[1]) {
             stringMatematica = "0";
+            stringWasCalculated = true;
         } else if (input == forbiden[2]) {
             stringMatematica = evalvular(stringMatematica);
             stringWasCalculated = true;
@@ -43,6 +44,10 @@ function processar_input(input) {
         } else if (input == forbiden[7]) {
             stringWasCalculated = true;
             stringMatematica = dectoHexadecimal(stringMatematica);
+        } else if (input == forbiden[8]) {
+            stringMatematica += "(";
+        } else if (input == forbiden[9]) {
+            stringMatematica += ")";
         }
             
     } else {
@@ -105,6 +110,7 @@ function dectoHexadecimal(stringa) {
         return "erro"
     }
 }
+
 
 let stringMatematica = "";
 let stringWasCalculated = false;
