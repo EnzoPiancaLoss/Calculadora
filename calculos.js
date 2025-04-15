@@ -3,13 +3,18 @@ function atualizarDisplay(NovoDisplay) {
 }
 
 function processar_input(input) {
-    let forbiden = ["ce", "C", "=", "d", "_", "decbin", "bindec"];
+    let forbiden = ["ce", "C", "=", "d", "_", "decbin", "bindec", "dechex"];
     let bool = false;
 
     for (let i = 0; i < forbiden.length; i++) {
         if (forbiden[i] == input) {
             bool = true;
         }
+    }
+    //Apaga a string apos "="
+    if (stringWasCalculated) {
+        stringMatematica = "";
+        stringWasCalculated = false;
     }
 
     if (bool) {
@@ -19,6 +24,8 @@ function processar_input(input) {
             stringMatematica = "0";
         } else if (input == forbiden[2]) {
             stringMatematica = evalvular(stringMatematica);
+            stringWasCalculated = true;
+
         } else if (input == forbiden[3]) {
              //Se for true, apaga 2, false apaga uma vez
             if (stringMatematica.charAt(stringMatematica.length - 1) == " ") {
@@ -28,10 +35,16 @@ function processar_input(input) {
         } else if (input == forbiden[4]) {
             stringMatematica += "-";
         } else if (input == forbiden[5]) {
+            stringWasCalculated = true;
             stringMatematica = dectobin(stringMatematica);
         } else if (input == forbiden[6]) {
+            stringWasCalculated = true;
             stringMatematica = bindec(stringMatematica);
+        } else if (input == forbiden[7]) {
+            stringWasCalculated = true;
+            stringMatematica = dectoHexadecimal(stringMatematica);
         }
+            
     } else {
         stringMatematica = construir_string(input, stringMatematica);
     }
@@ -40,6 +53,17 @@ function processar_input(input) {
 }
 
 function construir_string(item, string) {
+    let arr = ["+", "-","*","/"]
+    let boool = false
+    //Isso aqui é para achar se tem os itens do arr
+    for (let i = 0; i < arr.length;i ++) {
+        if (arr[i] == item) {
+            boool = true;
+        }
+    }
+    if (boool) {
+        item = " " + item + " "
+    }
     return string += item;
 }
 
@@ -52,7 +76,7 @@ function evalvular(expressao) {
 }
 
 function dectobin(decimal) {
-    decimal = decimal.trim();
+    decimal = decimal.trim(); // trim é para remover espaço
     if (decimal.includes(" ")) {
         return "Digite apenas um número";
     }
@@ -71,8 +95,19 @@ function bindec(binario) {
     return parseInt(binario, 2);
 }
 
-let stringMatematica = "";
+function dectoHexadecimal(stringa) {
+    try { 
+        let y = parseInt(stringa, 2);
+        let neww = y.toString(16);
+        return neww
+    } catch(e) {
+        console.log(e);
+        return "erro"
+    }
+}
 
+let stringMatematica = "";
+let stringWasCalculated = false;
 
 //processar_input("2")
 //processar_input("+")
