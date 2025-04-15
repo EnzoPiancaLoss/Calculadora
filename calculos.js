@@ -3,7 +3,7 @@ function atualizarDisplay(NovoDisplay) {
 }
 
 function processar_input(input) {
-    let forbiden = ["ce", "C", "=", "d", "_", "decbin", "bindec", "dechex", "parA", "parB", "%"];
+    let forbiden = ["ce", "C", "=", "d", "_", "decbin", "bindec", "dechex", "parA", "parB"];
     let bool = false;
 
     for (let i = 0; i < forbiden.length; i++) {
